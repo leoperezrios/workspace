@@ -1,0 +1,7 @@
+spring.application.name=microservicio-zull
+server.port=8090
+
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+
+spring.cloud.gateway.httpclient.pool.name=microservicio-usuario
+spring.cloud.gateway.httpclient.proxy.host=/api/alumnos/**

@@ -1,0 +1,38 @@
+package com.formacionbdi.microservicios.app.zuul;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.fromacionbdi.microservicios.app.zuul.filter.ErrorFilter;
+import com.fromacionbdi.microservicios.app.zuul.filter.PostFilter;
+import com.fromacionbdi.microservicios.app.zuul.filter.PreFilter;
+import com.fromacionbdi.microservicios.app.zuul.filter.RouteFilter;
+
+@SpringBootApplication
+public class MicroserviciosZuulApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MicroserviciosZuulApplication.class, args);
+	}
+	
+	@Bean
+	public ErrorFilter errorFilter() {
+		return new ErrorFilter();
+	}
+	
+	@Bean
+	public PostFilter postFilter() {
+		return new PostFilter();
+	}
+	
+	@Bean
+	public PreFilter preFilter() {
+		return new PreFilter();
+	}
+	
+	@Bean
+	public RouteFilter routeFilter() {
+		return new RouteFilter();
+	}
+}

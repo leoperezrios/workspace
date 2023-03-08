@@ -1,0 +1,5 @@
+package com.fromacionbdi.microservicios.app.zuul.filter;
+
+public class ErrorFilter  extends ZullFilter{
+
+}

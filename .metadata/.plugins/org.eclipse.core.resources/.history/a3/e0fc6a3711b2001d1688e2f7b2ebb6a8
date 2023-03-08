@@ -1,0 +1,8 @@
+spring.application.name=microservicio-zuul
+server.port=8090
+
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+
+spring.cloud.gateway.routes[0].id=microservicio-usuario
+spring.cloud.gateway.routes[0].uri=microservicio-usuario
+spring.cloud.gateway.routes[0].predicates[0]=Path=/api/alumnos/**
